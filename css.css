@@ -1,19 +1,56 @@
 /* === VARIABLES DE COLOR (Cámbialas si quieres otro color) === */
 :root {
-    --bg-color: #0f172a;       /* Azul muy oscuro casi negro */
-    --card-bg: #1e293b;        /* Un poco más claro para tarjetas */
-    --primary: #38bdf8;        /* Azul Cian Neón */
-    --secondary: #a855f7;      /* Púrpura Neón */
-    --text-light: #f8fafc;     /* Blanco hueso */
-    --text-gray: #94a3b8;      /* Gris para textos secundarios */
+    --bg-color: #0f172a;
+    /* Azul muy oscuro casi negro */
+    --card-bg: #1e293b;
+    /* Un poco más claro para tarjetas */
+    --primary: #38bdf8;
+    /* Azul Cian Neón */
+    --secondary: #a855f7;
+    /* Púrpura Neón */
+    --text-light: #f8fafc;
+    /* Blanco hueso */
+    --text-gray: #94a3b8;
+    /* Gris para textos secundarios */
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* === RESET BÁSICO === */
+html {
+    scroll-behavior: smooth;
+    /* Deslizamiento suave al navegar */
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Imágenes responsive por defecto */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* === CUSTOM SCROLLBAR (Chrome/Edge/Safari) === */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--card-bg);
+    border-radius: 5px;
+    border: 1px solid var(--secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
 }
 
 body {
@@ -21,7 +58,8 @@ body {
     color: var(--text-light);
     font-family: var(--font-main);
     line-height: 1.6;
-    overflow-x: hidden; /* Evita scroll horizontal */
+    overflow-x: hidden;
+    /* Evita scroll horizontal */
 }
 
 /* === NAVEGACIÓN === */
@@ -31,7 +69,8 @@ body {
     align-items: center;
     padding: 1.5rem 5%;
     background: rgba(15, 23, 42, 0.95);
-    position: sticky; /* Se queda pegado arriba al hacer scroll */
+    position: sticky;
+    /* Se queda pegado arriba al hacer scroll */
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(56, 189, 248, 0.1);
@@ -41,6 +80,7 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--text-light);
+    text-decoration: none;
 }
 
 .logo span {
@@ -60,9 +100,11 @@ body {
     transition: color 0.3s;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary);
-    text-shadow: 0 0 10px var(--primary); /* Efecto resplandor */
+    text-shadow: 0 0 10px var(--primary);
+    /* Efecto resplandor */
 }
 
 /* Botón menú móvil (oculto en PC) */
@@ -82,12 +124,15 @@ body {
 
 /* === HERO SECTION === */
 .hero {
-    height: 80vh;
+    min-height: 80dvh;
+    /* dvh se adapta mejor a móviles */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
+    padding-top: 80px;
+    /* Compensar navbar fixed */
 }
 
 .hero h1 {
@@ -98,7 +143,8 @@ body {
 .resaltado {
     color: transparent;
     background: linear-gradient(to right, var(--primary), var(--secondary));
-    -webkit-background-clip: text; /* Texto degradado */
+    -webkit-background-clip: text;
+    /* Texto degradado */
     background-clip: text;
 }
 
@@ -180,7 +226,8 @@ body {
 /* === RESPONSIVE (MÓVIL) === */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Se oculta el menú normal */
+        display: none;
+        /* Se oculta el menú normal */
         flex-direction: column;
         width: 100%;
         position: absolute;
@@ -192,14 +239,304 @@ body {
     }
 
     .nav-links.active {
-        display: flex; /* Se muestra al activar JS */
+        display: flex;
+        /* Se muestra al activar JS */
     }
 
     .menu-toggle {
-        display: block; /* Aparece la hamburguesa */
+        display: block;
+        /* Aparece la hamburguesa */
     }
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+}
+
+/* === SECCIÓN DAFO (AUTOCONEIXEMENT) === */
+.dafo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.dafo-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 5px solid transparent;
+    transition: transform 0.3s;
+}
+
+.dafo-card:hover {
+    transform: translateY(-5px);
+}
+
+.dafo-d {
+    border-left-color: #ef4444;
+}
+
+/* Debilidades - Rojo */
+.dafo-a {
+    border-left-color: #f97316;
+}
+
+/* Amenazas - Naranja */
+.dafo-f {
+    border-left-color: #22c55e;
+}
+
+/* Fortalezas - Verde */
+.dafo-o {
+    border-left-color: #3b82f6;
+}
+
+/* Oportunidades - Azul */
+
+.dafo-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: var(--text-light);
+}
+
+.dafo-list {
+    list-style: none;
+}
+
+.dafo-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+    color: var(--text-gray);
+}
+
+.dafo-list li::before {
+    content: "•";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* === TIMELINE (PERFIL) === */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--primary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    /* Centro en desktop */
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--bg-color);
+    border: 3px solid var(--secondary);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid var(--card-bg);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--card-bg);
+}
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid var(--card-bg);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--card-bg) transparent transparent;
+}
+
+.right::after {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: var(--card-bg);
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.timeline-content h3 {
+    color: var(--primary);
+}
+
+.timeline-content .date {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Responsive Timeline */
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item::after {
+        left: 21px;
+    }
+
+    .left::after,
+    .right::after {
+        left: 21px;
+    }
+
+    .right {
+        left: 0%;
+    }
+
+    .left::before,
+    .right::before {
+        left: 60px;
+        border: medium solid var(--card-bg);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--card-bg) transparent transparent;
+    }
+}
+
+/* === SKILLS (PERFIL) === */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    background: rgba(56, 189, 248, 0.1);
+    /* Toque azul sutil */
+    transform: scale(1.05);
+}
+
+.skill-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* === MERCADO === */
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.company-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border-top: 4px solid var(--secondary);
+}
+
+.company-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(168, 85, 247, 0.2);
+    /* Fondo morado semi */
+    color: var(--secondary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* === FOOTER === */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    color: var(--text-gray);
+    width: 100%;
+}
+
+/* === ACCESIBILIDAD === */
+*:focus-visible {
+    outline: 2px dashed var(--primary);
+    outline-offset: 4px;
+}
+
+/* Preferencias de Movimiento Reducido */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .section-fade,
+    .card,
+    .btn,
+    .dafo-card,
+    .menu-toggle span {
+        transition: none !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .section-fade {
+        opacity: 1 !important;
     }
 }

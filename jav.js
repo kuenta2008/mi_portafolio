@@ -30,7 +30,7 @@ const checkScroll = () => {
             element.classList.add('visible'); // Añadimos la clase CSS que le da opacidad 1
         } else {
             // Opcional: Si quieres que desaparezcan al subir, deja esta línea. Si no, bórrala.
-            // element.classList.remove('visible'); 
+            element.classList.remove('visible');
         }
     });
 };
