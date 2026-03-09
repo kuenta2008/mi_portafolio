@@ -1,2 +1,2 @@
 # mi_portafolio
-portafolio personañ
+portafolio personal

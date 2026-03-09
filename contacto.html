@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Portafolio Aitor</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">Portafolio <span>Aitor</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="autoconeixement.html">Autoconeixement</a></li>
+            <li><a href="perfil.html">Perfil Prof.</a></li>
+            <li><a href="mercat.html">Mercat</a></li>
+            <li><a href="contacto.html" class="btn-contacto active">Contacto</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <header class="hero" data-aos="fade-down">
+        <div class="hero-content">
+            <h1>Ponte en <span class="resaltado">Contacto</span></h1>
+            <p>Hablemos sobre oportunidades, proyectos y mÃ¡s.</p>
+        </div>
+        <div class="hero-bg-effect"></div>
+    </header>
+
+    <section class="container content-grid">
+        <div class="border-trace-container" data-aos="fade-right">
+            <div class="card" style="border: none; margin: 0; box-shadow: none;">
+                <h3><i class="fas fa-envelope"></i> EscrÃ­beme</h3>
+                <p>Si tienes alguna propuesta o simplemente quieres saludar, puedes contactarme directamente por correo
+                    electrÃ³nico.</p>
+                <br>
+                <p><strong><i class="fas fa-at"></i> Correo:</strong> <a href="mailto:aitorteogar@campus.monlau.com"
+                        style="color: var(--primary); text-decoration: none;">aitorteogar@campus.monlau.com</a></p>
+                <br>
+                <a href="https://kuenta2008.github.io/contact_me/" target="_blank" class="btn main-btn"><i
+                        class="fas fa-link"></i> Redes sociales y mÃ¡s link</a>
+            </div>
+        </div>
+
+        <div class="border-trace-container" data-aos="fade-left" data-aos-delay="200">
+            <div class="card" style="border: none; margin: 0; box-shadow: none;">
+                <h3><i class="fas fa-paper-plane"></i> Formulario</h3>
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo ElectrÃ³nico</label>
+                        <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Â¿En quÃ© te puedo ayudar?"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn main-btn" style="width: 100%; border-radius: 20px;"><i
+                            class="fas fa-paper-plane"></i> Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    <a href="index.html" class="btn-glow-next">Siguiente <i class="fas fa-arrow-right"></i></a>
+
+    <footer>
+        <p>&copy; 2025 Aitor - Monlau FP</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: false, mirror: true, duration: 1500, easing: 'ease-in-out-cubic', offset: 120 });
+    </script>
+    <script src="jav.js"></script>
+</body>
+
+</html>
